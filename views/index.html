@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users list</title>
+    <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>-->
+    <!--<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular-route.min.js">   </script>-->
+    <link href="/styles.css" rel="stylesheet"> </link>
+    <script src="https://cdn.jsdelivr.net/lodash/4.12.0/lodash.min.js"></script>
+    <script src="/libs.js"></script>
+</head>
+<body>
+<div class="site-wrapper">
+    <div class="site-wrapper-inner">
+        <div class="cover-container">
+            <div class="masthead clearfix">
+                <div class="inner">
+                    <h3 class="masthead-brand">Users View App</h3>
+                    <ul class="nav masthead-nav" ng-controller="MenuCtrl as menu">
+                        <li ng-class="menu.menuClass('welcome')"><a href="#/welcome">Welcome</a></li>
+                        <li ng-class="menu.menuClass('users')"><a href="#/users">Users</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="inner cover" ng-view>
+            </div>
+            <div class="mastfoot">
+                <div class="inner">
+                    <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/bundle.js"></script>
+</body>
+</html>
