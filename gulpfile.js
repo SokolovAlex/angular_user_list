@@ -34,14 +34,14 @@ gulp.task('lib_js', () => {
     return gulp.src(libs)
         .pipe(concat('libs.js'))
         .pipe(gulpif(args.release, uglify()))
-        .pipe(gulp.dest('build/'))
+        .pipe(gulp.dest('build/js/'))
 });
 
 gulp.task('client_js', () => {
     return gulp.src(client_src)
         .pipe(concat('bundle.js'))
         .pipe(gulpif(args.release, uglify()))
-        .pipe(gulp.dest('build/'))
+        .pipe(gulp.dest('build/js/'))
 });
 
 gulp.task('js', ['lib_js', 'client_js']);
@@ -57,7 +57,7 @@ gulp.task("server", () => {
 gulp.task("css", () => {
     return gulp.src(css)
         .pipe(concat('styles.css'))
-        .pipe(gulp.dest('build/'))
+        .pipe(gulp.dest('build/css/'))
 });
 
 gulp.task("build", ['clean', 'js', 'css', 'watch']);
