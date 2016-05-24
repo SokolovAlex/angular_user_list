@@ -1,7 +1,6 @@
 require.config({
     paths: {
-        'domReady': '../lib/requirejs-domready/domReady',
-        'angular': '/js/libs'
+        'angular': ['/js/angular.js', '/js/angular-route.js']
     },
     shim: {
         'angular': {
