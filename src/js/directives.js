@@ -1,4 +1,4 @@
-(function(angular) {
+define(['angular', 'lodash'], function (angular, _) {
     var directives = angular.module('directives', []);
 
     directives.factory('userService', [ '$http', function($http) {
@@ -48,16 +48,18 @@
             template: '<div ng-include="getTemplateUrl()"/>',
             controller: ['$scope', 'userService', function($scope, userService) {
                 $scope.getTemplateUrl = userService.getTemplate;
-                userService.getData().then(function(response) {
-                    if (response.status == 200) {
-                        $scope.users = response.data;
-                        $scope.groups = _.groupBy(response.data, 'group');
 
-                        debugger;
-                    }
-                })
+                userService
+                    .getData()
+                    .then(function(response) {
+                        if (response.status == 200) {
+                            $scope.users = response.data;
+                            $scope.groups = _.groupBy(response.data, 'group');
+                        }
+                    });
             }]
         };
     });
 
-})(angular);
+    return directives;
+});

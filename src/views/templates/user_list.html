@@ -1,4 +1,6 @@
 <div>
-List
-
+    <h4>User list</h4>
+    <div ng-repeat="user in users">
+        {{user.id}} - {{user.name}} - {{user.group}}-{{user.email}}
+    </div>
 </div>

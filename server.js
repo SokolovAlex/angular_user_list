@@ -6,12 +6,8 @@ var app = express();
 
 app.use(express.static(__dirname + '/build'));
 
-//app.set('views', __dirname + '/views');
-//app.set('view engine', 'jade');
-
 app.get('/', function (req, res) {
-    res.sendFile('index.html');
-    //res.render('index');
+    res.sendFile(__dirname + '/build/index_r.html');
 });
 
 app.listen(3000, function () {

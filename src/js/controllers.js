@@ -1,4 +1,5 @@
-(function(angular) {
+define(['angular'], function (angular) {
+
     var controllers = angular.module('controllers', []);
 
     controllers.factory('menu', function () {
@@ -28,4 +29,6 @@
             var ctrl = this;
             ctrl.menuClass = menu.checkActive;
         }]);
-})(angular);
+
+    return controllers;
+});

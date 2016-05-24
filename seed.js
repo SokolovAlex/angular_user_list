@@ -22,10 +22,9 @@ saveFile('mock_data.json', users);
 function saveFile(outputFilename, userData) {
     fs.writeFile(outputFilename, JSON.stringify(userData), function(err) {
         if(err) {
-            console.log(err);
-        } else {
-            console.log("--> saved to " + outputFilename);
+            return console.log(err);
         }
+        console.log("--> saved to " + outputFilename);
     });
 }
 
@@ -57,6 +56,6 @@ function makeName(n) {
 }
 
 function chooseGroup() {
-    var index = Math.round(groups.length * Math.random());
+    var index = Math.floor(groups.length * Math.random());
     return groups[index];
 }

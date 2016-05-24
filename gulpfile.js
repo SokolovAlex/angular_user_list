@@ -10,7 +10,8 @@ var gulp = require("gulp"),
 var libs = [
     'node_modules/angular/angular.js',
     'node_modules/angular-route/angular-route.js',
-    'node_modules/requirejs/require.js'
+    'node_modules/requirejs/require.js',
+    'node_modules/lodash/lodash.js'
 ];
 
 var css = [
@@ -19,7 +20,7 @@ var css = [
 ];
 
 var views = [
-    'src/views/index.html',
+    'src/views/index2.html',
     'src/views/index_r.html',
     'src/views/welcome_page.html',
     'src/views/users-view.html',
@@ -78,4 +79,4 @@ gulp.task('data', () => {
         .pipe(gulp.dest('build/'))
 });
 
-gulp.task("default", ['data', 'html', 'js', 'css', 'server', 'watch']);
+gulp.task("default", ['clean', 'data', 'html', 'js', 'css', 'server', 'watch']);
