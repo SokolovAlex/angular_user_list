@@ -1,6 +1,14 @@
-
 <div class="btn-group btn-group-sm" role="group" aria-label="...">
-    <button type="button" ng-class="{active: isActive('list')}" ng-click="select('list')" class="btn btn-default">List</button>
-    <button type="button" ng-class="{active: isActive('block')}" ng-click="select('block')" class="btn btn-default">Bloxx</button>
-    <button type="button" ng-class="{active: isActive('trello')}" ng-click="select('trello')" class="btn btn-default">Trello</button>
+    <button type="button" ng-class="{active: isActive('list')}" ng-click="select('list')" class="btn btn-default">
+        <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+        Table
+    </button>
+    <button type="button" ng-class="{active: isActive('block')}" ng-click="select('block')" class="btn btn-default">
+        <span class="glyphicon glyphicon-th" aria-hidden="true"></span>
+        Block
+    </button>
+    <button type="button" ng-class="{active: isActive('trello')}" ng-click="select('trello')" class="btn btn-default">
+        <span class="glyphicon glyphicon-film" aria-hidden="true"></span>
+        Trello
+    </button>
 </div>

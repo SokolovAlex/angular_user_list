@@ -20,14 +20,12 @@ var css = [
 ];
 
 var views = [
-    'src/views/index2.html',
-    'src/views/index_r.html',
-    'src/views/welcome_page.html',
-    'src/views/users-view.html',
-    'src/views/templates/*.html'
+    'src/views/**/*.html'
 ];
 
-var client_src = ['src/js/**/*.js'];
+var client_src = [
+    'src/js/**/*.js'
+];
 
 gulp.task('clean', () => {
     return rimraf("build/**/*.*", { nosort: true, silent: true }, function(){});
@@ -71,7 +69,7 @@ gulp.task('seed', () => {
 
 gulp.task('html', () => {
     return gulp.src(views)
-        .pipe(gulp.dest('build/'))
+        .pipe(gulp.dest('build/views'))
 });
 
 gulp.task('data', () => {
@@ -79,4 +77,9 @@ gulp.task('data', () => {
         .pipe(gulp.dest('build/'))
 });
 
-gulp.task("default", ['clean', 'data', 'html', 'js', 'css', 'server', 'watch']);
+gulp.task('fonts', () => {
+    return gulp.src('node_modules/bootstrap/dist/fonts/*.*')
+        .pipe(gulp.dest('build/fonts'))
+});
+
+gulp.task("default", ['clean', 'data', 'fonts', 'html', 'js', 'css', 'server', 'watch']);

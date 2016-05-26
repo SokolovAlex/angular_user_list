@@ -8,3 +8,30 @@ type-switcher {
 user-view {
     text-align: left;
 }
+
+.app_title{
+    color: #777;
+}
+
+.user-card {
+    text-align: center;
+    border: solid 1px gray;
+    border-radius: 2px;
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    margin: 2px;
+    padding: 2px;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.user-card:hover {
+    border: solid 2px gray;
+    background-color: lightgrey;
+    transform: rotateY( 20deg );
+}
+
+.user-card_icon {
+    font-size: 25px;
+}

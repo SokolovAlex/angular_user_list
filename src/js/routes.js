@@ -2,15 +2,15 @@ define(['./app'], function (app) {
     return app.config(['$routeProvider', function($routeProvider) {
         $routeProvider
             .when('/welcome',{
-                templateUrl: 'welcome_page.html',
+                templateUrl: 'views/welcome_page.html',
                 controller:'WelcomeCtrl'
             })
             .when('/users',{
-                templateUrl: 'users-view.html',
+                templateUrl: 'views/users-view.html',
                 controller:'UsersCtrl'
             })
             .otherwise({
-                redirectTo: 'welcome'
+                redirectTo: '/welcome'
             });
     }]);
 });

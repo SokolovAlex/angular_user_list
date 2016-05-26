@@ -8,7 +8,7 @@ var groups = ['managers', 'clients', 'admins', 'designers', null];
 var strValues = "qwertyuiopasdfghjklzxcvbnm1234567890";
 var chars = "qwertyuiopasdfghjklzxcvbnm";
 
-var users = _.map(_.range(310), function(i) {
+var users = _.map(_.range(500), function(i) {
     return {
         id: i,
         name: makeName((1 % 4) + 4),

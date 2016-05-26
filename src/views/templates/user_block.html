@@ -1,3 +1,11 @@
 <div>
-Block
+    <h4 class="app_title">Users Block</h4>
+
+    <div class="user-card" ng-repeat="user in users">
+        <div><b>{{user.name}}</b></div>
+        <span class="glyphicon glyphicon-user user-card_icon" aria-hidden="true"></span>
+        <div>{{user.id}}</div>
+        <div>{{user.email}}</div>
+        <div>{{user.group || '--no group--'}}</div>
+    </div>
 </div>

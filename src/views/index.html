@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users list</title>
+    <link href="/css/styles.css" rel="stylesheet"> </link>
+    <script src="/js/require.js" data-main="/js/main.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Users View App</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav" ng-controller="MenuCtrl as menu">
+                    <li ng-class="menu.menuClass('welcome')"><a href="#/welcome">Welcome</a></li>
+                    <li ng-class="menu.menuClass('users')"><a href="#/users">Users</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" ng-view>
+
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="text-muted">Place sticky footer content here.</p>
+        </div>
+    </footer>
+</body>
+</html>

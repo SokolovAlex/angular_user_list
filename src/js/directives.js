@@ -17,11 +17,11 @@ define(['angular', 'lodash'], function (angular, _) {
             getTemplate: function() {
                 switch(activeType) {
                     case 'list':
-                        return '/user_list.html';
+                        return 'views/templates/user_list.html';
                     case 'block':
-                        return '/user_block.html';
+                        return 'views/templates/user_block.html';
                     default:
-                        return '/user_trello.html';
+                        return 'views/templates/user_trello.html';
                 }
             }
         };
@@ -33,7 +33,7 @@ define(['angular', 'lodash'], function (angular, _) {
             scope: {
                 type: '@'
             },
-            templateUrl: '/type_switcher.html',
+            templateUrl: 'views/templates/type_switcher.html',
             controller: ['$scope', 'userService',  function($scope, userService) {
                 $scope.isActive = userService.isActive;
                 $scope.select = userService.active;

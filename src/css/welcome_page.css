@@ -1,0 +1,62 @@
+.welcome_page {
+    height: 100%;
+}
+
+.welcome_page {
+    background: #082330;
+    background-size: .12em 100%;
+    font: 12em/1 Arial;
+}
+
+.welcome_page .text--line {
+    font-size: .5em;
+}
+
+.welcome_page svg {
+    position: absolute;
+    width: 75%;
+    height: 75%;
+}
+
+.welcome_page .text-copy {
+    fill: none;
+    stroke: white;
+    stroke-dasharray: 7% 28%;
+    stroke-width: 3px;
+    -webkit-animation: stroke-offset 9s infinite linear;
+    animation: stroke-offset 9s infinite linear;
+}
+.welcome_page .text-copy:nth-child(1) {
+    stroke: #360745;
+    stroke-dashoffset: 7%;
+}
+.welcome_page .text-copy:nth-child(2) {
+    stroke: #D61C59;
+    stroke-dashoffset: 14%;
+}
+.welcome_page .text-copy:nth-child(3) {
+    stroke: #E7D84B;
+    stroke-dashoffset: 21%;
+}
+.welcome_page .text-copy:nth-child(4) {
+    stroke: #EFEAC5;
+    stroke-dashoffset: 28%;
+}
+.welcome_page .text-copy:nth-child(5) {
+    stroke: #1B8798;
+    stroke-dashoffset: 35%;
+}
+
+@-webkit-keyframes stroke-offset {
+    50% {
+        stroke-dashoffset: 35%;
+        stroke-dasharray: 0 87.5%;
+    }
+}
+
+@keyframes stroke-offset {
+    50% {
+        stroke-dashoffset: 35%;
+        stroke-dasharray: 0 87.5%;
+    }
+}
