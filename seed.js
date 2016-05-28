@@ -4,11 +4,13 @@
 var fs = require('fs');
 var _ = require('lodash');
 
+var num = 700;
+
 var groups = ['managers', 'clients', 'admins', 'designers', null];
 var strValues = "qwertyuiopasdfghjklzxcvbnm1234567890";
 var chars = "qwertyuiopasdfghjklzxcvbnm";
 
-var users = _.map(_.range(500), function(i) {
+var users = _.map(_.range(num), function(i) {
     return {
         id: i,
         name: makeName((1 % 4) + 4),

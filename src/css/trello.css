@@ -1,0 +1,21 @@
+.trelloview{
+    white-space: nowrap;
+    width: 1200px;
+    overflow-x: auto;
+}
+
+.trelloview__group{
+    border: 1px solid grey;
+    width:300px;
+    display: inline-block;
+    margin: 0 3px;
+    padding: 3px;
+    max-height:600px;
+    overflow-y: scroll;
+    vertical-align: top;
+}
+
+.trelloview__groupname{
+    text-align: center;
+    font-weight: bold;
+}

@@ -55,8 +55,36 @@ define(['angular', 'lodash'], function (angular, _) {
                         if (response.status == 200) {
                             $scope.users = response.data;
                             $scope.groups = _.groupBy(response.data, 'group');
+                            $scope.groupsNum = _.keys($scope.groups).length;
+                            debugger;
                         }
                     });
+
+                $scope.addUser = function(name, group) {
+                    $scope.users.push({
+                        id: 'new',
+                        name: name,
+                        group: group,
+                        email: 'new@email.com'
+                    });
+
+                    var oldGroups = _.keys($scope.groups);
+                    $scope.groups = _.groupBy($scope.users, 'group');
+
+                    var newGroups = _.keys($scope.groups);
+                    var diff = _.difference(oldGroups, newGroups);
+
+                    _.each(diff, function(name){
+                        $scope.groups[name] = [];
+                    });
+                    $scope.groupsNum = _.keys($scope.groups).length;
+                };
+
+                $scope.addGroup = function(name) {
+                    $scope.groups[name] = [];
+                    $scope.groupsNum = _.keys($scope.groups).length;
+                };
+
             }]
         };
     });
