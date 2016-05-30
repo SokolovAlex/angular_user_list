@@ -48,7 +48,10 @@ gulp.task('client_js', () => {
 gulp.task('js', ['lib_js', 'client_js']);
 
 gulp.task("watch", () => {
-    gulp.watch(client_src.concat(css).concat(views), ['html', 'client_js', 'css']);
+    gulp.watch(client_src
+        .concat(css)
+        .concat(views),
+        ['html', 'client_js', 'css']);
 });
 
 gulp.task("server", () => {

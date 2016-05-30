@@ -1,5 +1,8 @@
 # angular_user_list
 
+*user list view test application
+    (node, gulp, express, angular, angular-route, requirejs)*
+
 - install dependencies
 
 ```
@@ -20,5 +23,13 @@ gulp seed
 gulp
 ```
 
-- browser localhost:3000
+- browser
 
+```
+localhost:3000
+```
+
+task 1
+```
+localhost:3000/task1
+```

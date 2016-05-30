@@ -10,6 +10,11 @@ app.get('/', function (req, res) {
     res.sendFile(__dirname + '/build/views/index.html');
 });
 
+app.get('/task1', function (req, res) {
+    res.sendFile(__dirname + '/build/views/task1.html');
+});
+
+
 app.listen(3000, function () {
     console.log('Example app listening on port 3000!');
 });

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task 1</title>
+    <style>
+        .taskfrom {
+            width: 100%;
+            line-height: 150px;
+        }
+
+        .taskform__btn {
+            display: inline-block;
+            line-height: normal;
+            vertical-align: top;
+            height: 50px;
+            margin-left: 15px;
+            float: right;
+        }
+
+        .taskform__inputwrapper {
+            display: inline-block;
+            line-height: normal;
+            vertical-align: top;
+            width: 80%;
+            float: left;
+        }
+
+        .taskform__input {
+            margin-bottom: 0;
+            height: 50px;
+            width: 100%;
+        }
+
+        .taskform__description {
+            color: grey;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+<form class="taskfrom">
+
+    <div class="taskform__inputwrapper">
+        <input type="text" class="taskform__input"/>
+        <div class="taskform__description">
+            Examle: Nothing great has great beginnings.
+        </div>
+    </div>
+
+    <button class="taskform__btn">
+        some text
+    </button>
+
+</form>
+
+<script type="application/javascript">
+    var mnogobukov = 'existencializmus je humanizmus',
+        r = Math.floor(Math.random() * mnogobukov.length),
+        word = mnogobukov.substr(0, r);
+    document.getElementsByClassName("taskform__btn")[0].innerHTML = word || '...';
+</script>
+
+</body>
+</html>
