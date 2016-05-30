@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task 1</title>
+    <script type="text/javascript">
+        if (!document.querySelectorAll) {
+            document.querySelectorAll = function (selectors) {
+                var style = document.createElement('style'), elements = [], element;
+                document.documentElement.firstChild.appendChild(style);
+                document._qsa = [];
+
+                style.styleSheet.cssText = selectors + '{x-qsa:expression(document._qsa && document._qsa.push(this))}';
+                window.scrollBy(0, 0);
+                style.parentNode.removeChild(style);
+
+                while (document._qsa.length) {
+                    element = document._qsa.shift();
+                    element.style.removeAttribute('x-qsa');
+                    elements.push(element);
+                }
+                document._qsa = null;
+                return elements;
+            };
+        }
+
+        if (!document.querySelector) {
+            document.querySelector = function (selectors) {
+                var elements = document.querySelectorAll(selectors);
+                return (elements.length) ? elements[0] : null;
+            };
+        }
+    </script>
+
+    <style>
+        .taskform {
+            white-space: nowrap;
+            width: 100%;
+        }
+
+        .taskform__btn {
+            display: inline-block;
+            height: 50px;
+            vertical-align: top;
+        }
+
+        .taskform__inputwrapper {
+            display: inline-block;
+            vertical-align: top;
+            padding-right: 15px;
+        }
+
+        .taskform__input {
+            margin-bottom: 0;
+            height: 50px;
+            width: 100%;
+        }
+
+        .taskform__description {
+            color: grey;
+            margin-top: 5px;
+        }
+    </style>
+
+</head>
+<body>
+
+<form class="taskform">
+    <div class="taskform__inputwrapper">
+        <input type="text" class="taskform__input"/>
+        <div class="taskform__description">
+            Examle: Nothing great has great beginnings.
+        </div>
+    </div>
+
+    <button class="taskform__btn">
+        some text
+    </button>
+</form>
+
+
+<script type="text/javascript">
+    var mnogobukov = 'existencializmus je humanizmus',
+        r = Math.floor(Math.random() * mnogobukov.length),
+        word = mnogobukov.substr(0, r);
+
+    document.querySelector(".taskform__btn").innerHTML = word || '...';
+</script>
+
+<script type="text/javascript">
+    function resize() {
+        var btn_width = document.querySelector(".taskform__btn").clientWidth,
+                wrapper_width = document.querySelector(".taskform").clientWidth,
+                input = document.querySelector(".taskform__inputwrapper");
+        var padding = 15;
+        input.style.width = (wrapper_width - btn_width - padding) + 'px';
+    }
+    resize();
+    window.onresize = resize;
+</script>
+
+</body>
+</html>
