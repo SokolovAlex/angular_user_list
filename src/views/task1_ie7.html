@@ -39,13 +39,13 @@
         }
 
         .taskform__btn {
-            display: inline-block;
+            float: right;
             height: 50px;
             vertical-align: top;
         }
 
         .taskform__inputwrapper {
-            display: inline-block;
+            float: left;
             vertical-align: top;
             padding-right: 15px;
         }
@@ -92,11 +92,11 @@
         var btn_width = document.querySelector(".taskform__btn").clientWidth,
                 wrapper_width = document.querySelector(".taskform").clientWidth,
                 input = document.querySelector(".taskform__inputwrapper");
-        var padding = 15;
+        var padding = 19;
         input.style.width = (wrapper_width - btn_width - padding) + 'px';
     }
-    resize();
     window.onresize = resize;
+    resize();
 </script>
 
 </body>

@@ -56,7 +56,6 @@ define(['angular', 'lodash'], function (angular, _) {
                             $scope.users = response.data;
                             $scope.groups = _.groupBy(response.data, 'group');
                             $scope.groupsNum = _.keys($scope.groups).length;
-                            debugger;
                         }
                     });
 
